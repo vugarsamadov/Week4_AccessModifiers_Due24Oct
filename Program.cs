@@ -5,16 +5,12 @@ int count = Convert.ToInt32(Console.ReadLine());
 
 Notebook[] Database = new Notebook[count];
 
-
 for (int i = 0; i < count; i++)
 {
     Database[i] = GetNotebookFromUser();
 }
 
-foreach (Notebook notebook in Database)
-{
-    Console.WriteLine(notebook);
-}
+PrintNotebookDB(Database);
 
 Notebook GetNotebookFromUser()
 {
@@ -46,4 +42,13 @@ decimal PromptAndGetDec(string prompt)
 {
     Console.Write(prompt);
     return Convert.ToDecimal(Console.ReadLine());
+}
+
+void PrintNotebookDB(Notebook[] DB)
+{
+    Console.WriteLine();
+    foreach (Notebook notebook in DB)
+    {
+        Console.WriteLine(notebook);
+    }
 }
